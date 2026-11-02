@@ -1,5 +1,15 @@
 # Проверка MVP — 2 ноября 2026
 
+## Публикация завершена
+
+С разрешения владельца проект отправлен в main репозитория https://github.com/lucefuge/distressed-demo и опубликован на **https://lucefuge.github.io/distressed-demo/**. Первый workflow [41488816368](https://github.com/lucefuge/distressed-demo/actions/runs/41488816368) завершил build и deploy успешно: npm ci, lint, TypeScript, 29 тестов, production build и verify:pages.
+
+На публичном домене проверены HTTP200 для HTML, JS/CSS, двух логотипов и всех41 фотографий (**46 HTTP-проверок**). Служебный `.nojekyll` проверяется в dist как build-marker, а не как публичный URL: artifact uploader не обязан публиковать dotfiles, и Actions deployment не запускает Jekyll.
+
+В живом браузере проверена https://lucefuge.github.io/distressed-demo/#DEMO-003 с reload: карточка открывается, изображение загружается с правильным base, кнопка заказа отключена, ошибок консоли нет. Веб-приложение не требует localhost, backend, авторизации или платежей. Секреты не отправлялись; Git-коммиты используют GitHub noreply-email.
+
+Ниже сохранён отчёт подготовки до подтверждения публикации.
+
 ## Итоговый аудит и подготовка Pages
 
 Актуальный результат: **29/29 тестов**, `npm run lint`, `npm run typecheck`, `npm run build` и `npm run verify:pages` проходят. В последний набор добавлены 5 групп граничных условий, 4 регрессии асинхронного копирования и 6 проверок путей Pages.

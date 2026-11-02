@@ -18,7 +18,9 @@ for (const name of assets.filter(file => file.endsWith('.js'))) {
 }
 await fs.access('dist/.nojekyll');
 const photos = (await fs.readdir('dist/products')).map(name => `products/${name}`);
-const resources = ['', ...entries.map(entry => entry.slice(base.length)), 'distressed-logo.png', 'distressed-wordmark.png', '.nojekyll', ...photos];
+// .nojekyll is a build marker, not a public resource. Pages artifact upload
+// may intentionally omit dotfiles; an Actions deployment does not run Jekyll.
+const resources = ['', ...entries.map(entry => entry.slice(base.length)), 'distressed-logo.png', 'distressed-wordmark.png', ...photos];
 if (process.argv[2]) {
   const origin = new URL(process.argv[2]);
   for (const resource of resources) {

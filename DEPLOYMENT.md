@@ -2,9 +2,9 @@
 
 Репозиторий: https://github.com/lucefuge/distressed-demo
 
-Адрес **после успешной публикации**: https://lucefuge.github.io/distressed-demo/
+Публичный адрес: https://lucefuge.github.io/distressed-demo/
 
-Проект подготовлен локально. Push и публикация требуют отдельного подтверждения владельца. Сайт ещё не размещён.
+Первоначальная отправка и публикация подтверждены владельцем. GitHub Pages включён в режиме GitHub Actions; main автоматически собирается и публикуется.
 
 ## Конфигурация
 
