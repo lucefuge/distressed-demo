@@ -9,10 +9,10 @@
 ## Конфигурация
 
 - Vite `base: '/distressed-demo/'`, ресурсы через `assetUrl(..., import.meta.env.BASE_URL)`.
-- Hash-маршруты `/distressed-demo/#DEMO-003`: сервер получает только `/distressed-demo/`. Прямые ссылки и reload не требуют rewrite или 404 fallback. URL `/product/123` не используются.
-- Production всегда показывает 16 демонстрационных позиций. `?demo=0` не включает реальный ассортимент. Локальный dev-режим сохраняет снимок канала.
+- Hash-маршруты `/distressed-demo/#TG-29661`: сервер получает только `/distressed-demo/`. Прямые ссылки и reload не требуют rewrite или 404 fallback. URL `/product/123` не используются.
+- Production показывает 15 карточек из снимка канала: названия, описания и бренды совпадают с постами. Цены и размеры приведены на дату публикации, наличие требует уточнения. `?demo=1` в production не включает вымышленные позиции; они доступны только локально для тестирования. Реальные заказы остаются отключены.
 - «Неофициальный демонстрационный концепт», заказы и платежи отключены. Ссылок продавца в production bundle нет. Форм отправки, аналитики, cookies, сбора персональных данных и backend нет. Поиск и избранное — в памяти страницы.
-- Публичные фото канала — иллюстрации, не изображения вымышленных SKU. Фото и фирменное изображение станут видимы на сайте и в публичном репозитории; права на внешнее размещение подтверждает владелец перед push.
+- Фотографии и описания взяты из соответствующих публикаций канала. Фото и фирменное изображение станут видимы на сайте и в публичном репозитории; права на внешнее размещение подтверждает владелец перед push.
 - `.gitignore` исключает `.env*`, приватные ключи, HTML-снимки канала, npm cache, node_modules, dist, логи, PID и скриншоты.
 
 ## Проверка
@@ -45,6 +45,6 @@ git push -u origin main
 
 На GitHub выберите **Settings → Pages → Build and deployment → Source: GitHub Actions**. Бесплатное размещение рассчитано на публичный репозиторий. Push в main запускает `.github/workflows/deploy.yml`: npm ci, lint, typecheck, тесты, build, загрузка только dist и deployment Pages. Есть ручной workflow_dispatch. Личные PAT, bot tokens и repository secrets не нужны; используются штатные краткоживущие permissions GitHub Actions.
 
-Дождитесь успешных jobs build/deploy в Actions и проверьте адрес Pages с `#DEMO-003` и перезагрузкой. До выполнения workflow публичный адрес может отвечать 404.
+Дождитесь успешных jobs build/deploy в Actions и проверьте адрес Pages с `#TG-29661` и перезагрузкой. До выполнения workflow публичный адрес может отвечать 404.
 
 Основание: [Vite static deployment](https://vite.dev/guide/static-deploy.html#github-pages), [GitHub Pages custom workflows](https://docs.github.com/en/pages/getting-started-with-github-pages/using-custom-workflows-with-github-pages).

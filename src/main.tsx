@@ -59,10 +59,10 @@ function ProductImage({
   );
 }
 function App() {
-  // Public builds are always a fictional, read-only concept, even with ?demo=0.
+  // Public concept uses the channel snapshot; real ordering stays disabled.
   const publicConcept = import.meta.env.PROD;
   const demo =
-    publicConcept || new URLSearchParams(location.search).get("demo") === "1";
+    !publicConcept && new URLSearchParams(location.search).get("demo") === "1";
   const [loading, setLoading] = useState(true),
     [loadError, setLoadError] = useState(false),
     [loadAttempt, setLoadAttempt] = useState(0);
