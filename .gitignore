@@ -1,0 +1,15 @@
+node_modules/
+dist/
+.npm-cache/
+*.log
+*.tsbuildinfo
+vite.pid
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+channel*.html
+audit-screenshots/
+catalog-preview.jpg
+publish-bundle.zip
